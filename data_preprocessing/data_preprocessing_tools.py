@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 @author: manishnarang
+Data Preprocessing
 """
 #Importing Libraries
 import numpy as np #contains mathematical tools.
@@ -10,7 +11,7 @@ import pandas as pd #to import data sets and manage data sets.
 #Importing Data Set - difference between the independent variables and the dependent variables.
 dataSet = pd.read_csv('Data.csv')
 X = dataSet.iloc[:, :-1].values
-Y = dataSet.iloc[:, 3].values
+Y = dataSet.iloc[:, -1].values
 print(X)
 print(Y)
 
@@ -29,7 +30,7 @@ ct = ColumnTransformer([('encoder', OneHotEncoder(), [0])], remainder='passthrou
 X = np.array(ct.fit_transform(X))
 print(X)
 
-#Encoding the Independent Variable
+#Encoding the Dependent Variable
 from sklearn.preprocessing import LabelEncoder
 labelEncoder_X = LabelEncoder()
 Y = labelEncoder_X.fit_transform(Y)
