@@ -10,8 +10,8 @@ import pandas as pd #to import data sets and manage data sets.
 
 #Importing Data Set - difference between the independent variables and the dependent variables.
 dataSet = pd.read_csv('Data.csv')
-X = dataSet.iloc[:, :-1].values
-Y = dataSet.iloc[:, -1].values
+X = dataSet.iloc[:, :-1].values #ilock stands for index locator; here it will fetch all columns except last column
+Y = dataSet.iloc[:, -1].values # here ilock will fetch just the last column
 print(X)
 print(Y)
 
